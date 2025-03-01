@@ -30,7 +30,7 @@ export default function App() {
           component={HomeScreen}
           options={{
             headerLeft: () => renderFavouriteButton(),
-            headerRight: () => renderCartButton()
+            headerRight: () => renderCartButton(),
           }}
         />
         <Stack.Screen name={'Cart'} component={CartScreen} />
