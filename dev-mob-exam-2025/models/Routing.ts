@@ -4,6 +4,7 @@ import { RouteProp } from '@react-navigation/native'
 export type RootStackParamList = {
   Home: undefined
   FavouriteAnnounce: undefined
+  Cart: undefined
   NewAnnounce: undefined
   AnnounceDetails: { announceId: string }
   EditAnnounce: { announceId: string }

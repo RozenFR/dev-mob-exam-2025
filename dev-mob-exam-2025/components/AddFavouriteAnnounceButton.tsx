@@ -19,13 +19,13 @@ export const AddFavouriteAnnounceButton: React.FC<Props> = ({ announceId }) => {
     getAnnounce(announceId).then(res => (res ? setAnnounce(res) : null))
   })
 
-  const addFavouriteMovieHandler = async () => {
+  const addFavouriteAnnounceHandler = async () => {
     await saveUpdateFavouriteAnnounce(announce!)
     if (navigation.canGoBack()) navigation.goBack()
   }
 
   return (
-    <Pressable onPress={addFavouriteMovieHandler}>
+    <Pressable onPress={addFavouriteAnnounceHandler}>
       <FontAwesome name='heart-o' size={24} color='red' />
     </Pressable>
   )

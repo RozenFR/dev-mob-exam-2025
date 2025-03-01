@@ -41,18 +41,6 @@ export const getAnnounce = async (id: string) => {
   return announcesStore.announces.find(announce => announce.id === id)
 }
 
-export const getAllAnnouncesById = async (announceIds: string[]) => {
-  const announces = await getAllAnnounces()
-  const result: Announce[] = []
-  announceIds.forEach(id => {
-    const announce = announces.announces.find(announce => announce.id === id)
-    if (announce) {
-      result.push(announce)
-    }
-  })
-  return { movies: result }
-}
-
 export const saveUpdateAnnounce = async (announce: Announce) => {
   const announcesStore = await getAllAnnounces()
   if (announce.id) {

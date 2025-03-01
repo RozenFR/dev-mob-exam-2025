@@ -2,6 +2,7 @@ import React from 'react'
 import { Announce } from '../models/Announce'
 import { Box, ListItem, VStack, Text } from '@react-native-material/core'
 import { ScrollView, View } from 'react-native'
+import { AddCartAnnounceButton } from './AddCartAnnounceButton'
 
 type Props = {
   announce: Announce
@@ -43,6 +44,7 @@ export const AnnounceDetails: React.FC<Props> = ({ announce }) => {
           secondaryText={announce.salerCity}
         ></ListItem>
         <ListItem title={'OS'} secondaryText={announce.os}></ListItem>
+        <AddCartAnnounceButton announceId={announce.id} />
       </VStack>
     ) : (
       <View>

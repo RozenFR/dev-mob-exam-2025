@@ -7,12 +7,18 @@ import React from 'react'
 import { AnnounceDetailsScreen } from './screens/AnnounceDetailsScreen'
 import { FavouriteAnnounceListButton } from './components/FavouriteAnnounceListButton'
 import { FavouriteAnnounceScreen } from './screens/FavouriteAnnounceScreen'
+import { CartListButton } from './components/CartListButton'
+import { CartScreen } from './screens/CartScreen'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export default function App() {
-  const renderNewAnnounceButton = () => {
+  const renderFavouriteButton = () => {
     return <FavouriteAnnounceListButton />
+  }
+
+  const renderCartButton = () => {
+    return <CartListButton />
   }
 
   return (
@@ -23,9 +29,11 @@ export default function App() {
           name={'Home'}
           component={HomeScreen}
           options={{
-            headerLeft: () => renderNewAnnounceButton(),
+            headerLeft: () => renderFavouriteButton(),
+            headerRight: () => renderCartButton()
           }}
         />
+        <Stack.Screen name={'Cart'} component={CartScreen} />
         <Stack.Screen
           name={'FavouriteAnnounce'}
           component={FavouriteAnnounceScreen}
